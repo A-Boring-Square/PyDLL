@@ -1,5 +1,0 @@
-
-[dev]
-twine
-wheel
-setuptools>=42
