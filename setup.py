@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages
 from pathlib import Path
 
+
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
@@ -9,7 +10,7 @@ setup(
     version="0.1.1",
     author="A-Boring-Square",
     author_email="aboringsquarel@gmail.com",
-    description="A Python package for packaging and importing compiled .pyc files",
+    description="A Python package for packaging and importing compiled .pyc files into dll like packages",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/A-Boring-Square/PyDLL",
