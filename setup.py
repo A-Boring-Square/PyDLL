@@ -6,7 +6,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="pydynamiclib",
-    version="0.1.0",
+    version="0.1.1",
     author="A-Boring-Square",
     author_email="aboringsquarel@gmail.com",
     description="A Python package for packaging and importing compiled .pyc files",

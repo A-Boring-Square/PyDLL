@@ -92,7 +92,8 @@ def compile_and_zip(source_dir, output_zip):
     except Exception as e:
         logging.error(f'Error: {e}')
 
-if __name__ == '__main__':
+
+def main():
     parser = argparse.ArgumentParser(description='Compile and package Python source and libraries.')
     parser.add_argument('source_directory', type=str, help='The source directory to compile and package')
     parser.add_argument('output_package_file', type=str, help='The output package file name (should end with .pydll)')
@@ -106,3 +107,7 @@ if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
     
     compile_and_zip(args.source_directory, output_package_file)
+
+
+if __name__ == '__main__':
+    main()

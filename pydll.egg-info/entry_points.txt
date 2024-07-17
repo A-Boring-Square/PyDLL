@@ -1,2 +1,0 @@
-[console_scripts]
-pydll = pydll.__main__:main
