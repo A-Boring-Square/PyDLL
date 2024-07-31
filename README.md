@@ -34,7 +34,8 @@ This command will:
 
 1.  Compile all `.py` files in the specified source directory.
 2.  Create a ZIP archive containing the compiled files and required dependencies.
-NOTE: when packaging a library make all the import statments reroute to the Lib dir
+
+**NOTE: when packaging a library make all the import statments reroute to the Lib dir**
 
 ### Loading a PyDLL Package
 
