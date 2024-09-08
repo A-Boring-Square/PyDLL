@@ -10,14 +10,26 @@ import json
 
 def get_required_packages(source_dir):
     # Use pipreqs to generate requirements.txt
-    subprocess.run(['pipreqs', '--force', source_dir], check=True)
-
-    # Read requirements.txt
-    with open(os.path.join(source_dir, 'requirements.txt'), 'r') as req_file:
-        packages = [line.split('==')[0] for line in req_file if line.strip()]
+    result = subprocess.run(['pipreqs', '--force', source_dir], capture_output=True, text=True)
     
+    # Check if pipreqs encountered any error
+    if result.returncode != 0:
+        logging.error(f'pipreqs failed: {result.stderr}')
+        raise RuntimeError('Failed to generate requirements.txt using pipreqs.')
+    
+    # Path to requirements.txt
+    requirements_path = os.path.join(source_dir, 'requirements.txt')
+
+    # Ensure the file exists
+    if not os.path.exists(requirements_path):
+        raise FileNotFoundError(f'requirements.txt not found at {requirements_path}')
+    
+    # Read requirements.txt
+    with open(requirements_path, 'r') as req_file:
+        packages = [line.split('==')[0] for line in req_file if line.strip()]
+
     # Remove the requirements.txt file
-    os.remove(os.path.join(source_dir, 'requirements.txt'))
+    os.remove(requirements_path)
     
     return packages
 
