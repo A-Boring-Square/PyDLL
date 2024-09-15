@@ -1,4 +1,4 @@
-PyDLL
+PyDLL (WARN: wip)
 =====
 
 PyDLL is a Python package for compiling and packaging Python code and its dependencies into a single distributable archive. This package supports dynamically loading Python modules from those packages.
